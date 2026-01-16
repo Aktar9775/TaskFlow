@@ -1,7 +1,21 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
 import ProjectModal from "../../features/projects/ProjectsModals";
 import GithubModals from "../../features/github/GithubModals";
+=======
+
+import React, { useEffect, useState } from "react";
+import { Github } from "lucide-react";
+
+import DashboardLayout from "../../components/layout/DashboardLayout"; 
+
+import GithubModals from "../../features/github/GithubModals";
+
+import ProjectsModals from "../../features/projects/ProjectsModals";
+
+
+>>>>>>> 8f5e71e (Change form vs)
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchGithubProfile,
@@ -17,7 +31,7 @@ import {
 } from "../../features/projects/projectsSlice";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
-import { Github, Unlink2 } from "lucide-react";
+
 export default function Projects() {
   const dispatch = useDispatch();
   const { list, loading, error } = useSelector((s) => s.projects);
@@ -30,12 +44,13 @@ export default function Projects() {
   );
   const [gitModal, setGitModal] = useState(false);
 
-  useEffect(() => {
-    if (username) {
-      dispatch(fetchGithubProfile(username));
-      dispatch(fetchGithubRepos(username));
-    }
-  }, [username]);
+ useEffect(() => {
+  if (username) {
+    dispatch(fetchGithubProfile(username));
+    dispatch(fetchGithubRepos(username));
+  }
+}, [username]);
+
 
   useEffect(() => {
     dispatch(fetchProjects());
@@ -235,7 +250,11 @@ export default function Projects() {
       )}
 
       {/* Modal */}
+<<<<<<< HEAD
       <ProjectModal
+=======
+      <ProjectsModals
+>>>>>>> 8f5e71e (Change form vs)
         open={open}
         onClose={() => setOpen(false)}
         onSubmit={editProject ? handleUpdate : handleCreate}
