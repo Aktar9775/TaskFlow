@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
-import ProjectModal from "../../features/projects/projectsModals";
-import GithubModal from "../../features/github/githubModals";
+import ProjectModal from "../../features/projects/ProjectsModals";
+import GithubModals from "../../features/github/GithubModals";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchGithubProfile,
@@ -17,7 +17,6 @@ import {
 } from "../../features/projects/projectsSlice";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
-import { mapGithubRepoToProject } from "../../features/github/githubMapper";
 import { Github, Unlink2 } from "lucide-react";
 export default function Projects() {
   const dispatch = useDispatch();
@@ -242,7 +241,7 @@ export default function Projects() {
         onSubmit={editProject ? handleUpdate : handleCreate}
         initialData={editProject}
       />
-      <GithubModal
+      <GithubModals
         open={gitModal}
         onClose={() => setGitModal(false)}
         onSubmit={(u) => {

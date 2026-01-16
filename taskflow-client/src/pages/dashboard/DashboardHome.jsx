@@ -6,16 +6,13 @@ import { fetchTasks } from "../../features/tasks/taskSlice";
 import { mapGithubRepoToProject } from "../../features/github/githubMapper";
 
 
-import GithubModal from "../../features/github/githubModals";
+import GithubModals from "../../features/github/GithubModals";
 import {
   fetchGithubProfile,
   fetchGithubRepos,
   setGithubUsername,
 } from "../../features/github/githubSlice";
 import toast from "react-hot-toast";
-
-
-
 import {
   FolderKanban,
   CheckCircle2,
@@ -293,7 +290,7 @@ export default function DashboardHome() {
         </div>
       </div>
       {/* ✅ GitHub Link Modal */}
-<GithubModal
+<GithubModals
   open={gitModal}
   onClose={() => setGitModal(false)}
   onSubmit={(u) => {
