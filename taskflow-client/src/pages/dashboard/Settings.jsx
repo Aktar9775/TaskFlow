@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { unlinkGithub,resetGithubState } from "../../features/github/githubSlice";
 import { logout } from "../../features/auth/authSlice";
 import { Github, Lock, User, LogOut, Trash2, Settings2, Unlink2 } from "lucide-react";
-import GithubModal from "../../features/github/githubModals";
+import GithubModal from "../../features/github/GithubModals";
 import { fetchGithubProfile, fetchGithubRepos, setGithubUsername } from "../../features/github/githubSlice";
 
 export default function Settings() {
