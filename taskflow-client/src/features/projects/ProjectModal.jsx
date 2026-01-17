@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "../../components/ui/Button";
 import Input from "../../components/ui/Input";
 
-export default function ProjectsModals({ open, onClose, onSubmit, initialData }) {
+export default function projectModal({ open, onClose, onSubmit, initialData }) {
   const [form, setForm] = useState({ name: "", description: "" });
 
   useEffect(() => {
