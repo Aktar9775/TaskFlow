@@ -6,5 +6,5 @@ export default defineConfig({
     ,
     tailwindcss(),
   ],
-  base: "/taskflow-client/",
+  base: "/",
 })
