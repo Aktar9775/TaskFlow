@@ -2,7 +2,7 @@ import { useState } from "react";
 import Input from "../../components/ui/Input";
 import Button from "../../components/ui/Button";
 
-export default function GithubModal({ open, onClose, onSubmit }) {
+export default function GithubModals({ open, onClose, onSubmit }) {
   const [username, setUsername] = useState("");
 
   if (!open) return null;
