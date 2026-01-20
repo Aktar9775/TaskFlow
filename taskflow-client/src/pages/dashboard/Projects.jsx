@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
-import projectModal from "../../features/projects/ProjectModal";
+import ProjectModal from "../../features/projects/ProjectModal";
 import GithubModals from "../../features/github/GithubModals";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -236,7 +236,7 @@ export default function Projects() {
       )}
 
       {/* Modal */}
-      <projectModal
+      <ProjectModal
         open={open}
         onClose={() => setOpen(false)}
         onSubmit={editProject ? handleUpdate : handleCreate}
